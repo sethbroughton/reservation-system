@@ -35,3 +35,76 @@ CREATE TABLE venue
 
 INSERT INTO venue (name, description, capacity, image)
 VALUES ('Elizabeth Sugden Broughton Community Building', 'Multi-USE Community Building', 285, 'ESB.jpg'); 
+
+
+DROP TABLE IF EXISTS rate;
+
+CREATE TABLE rate
+(
+        rate_id SERIAL NOT NULL, 
+        name VARCHAR(256) NOT NULL,
+        description VARCHAR(256) NOT NULL,
+        rate_dollar money NOT NULL,
+        includes_cleaning_fee boolean NOT NULL,
+        starting_month VARCHAR(256) NOT NULL,
+        ending_month VARCHAR(256) NOT NULL,
+        starting_hour NUMERIC(4,2) NOT NULL,
+        ending_hour NUMERIC(4,2) NOT NULL,
+        weekend boolean NOT NULL,
+        weekday boolean NOT NULL,
+        holiday boolean NOT NULL
+
+);
+
+INSERT INTO rate (name, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
+VALUES ('Weekeday','Monday-Friday before 4:30', 350.00, false, 'January', 'December', 0, 16.50, false, true, false);
+
+INSERT INTO rate (name, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
+VALUES ('Weekday-Evening','Monday-Friday after 4:30', 500.00, false, 'January', 'December', 16.51, 24, false, true, false); 
+
+INSERT INTO rate (name, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
+VALUES ('Saturday','Saturday Only', 900.00, false, 'January', 'December', 0.00, 24.00, true, false, false);
+
+INSERT INTO rate (name, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
+VALUES ('Sunday - All Day','Sunday Only', 500.00, false, 'January', 'December', 0.00, 24.00, true, false, false);
+
+INSERT INTO rate (name, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
+VALUES ('Sunday - Evening','Sunday 12pm to 6pm', 500.00, false, 'January','December', 12.00, 18.00, true, false, false);
+
+INSERT INTO rate (name, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
+VALUES ('Weekend - In Season','Friday 5pm to Sunday 10am', 2000.00, true, 'April','October', 0.00, 24.00, true, false, false);
+
+INSERT INTO rate (name, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
+VALUES ('Weekend - Off Season','Friday 5pm to Sunday 10am', 1750.00, true, 'November','March', 0.00, 24.00, true, false, false);
+
+INSERT INTO rate (name, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
+VALUES ('Special Holiday','Holiday Rate', 1250.00, true, 'January','December', 0.00, 24.00, false, false, true);
+
+
+DROP TABLE IF EXISTS service;
+
+CREATE TABLE service
+(
+        service_id SERIAL NOT NULL, 
+        name VARCHAR(256) NOT NULL,
+        description VARCHAR(256) NOT NULL, 
+        rate_dollar money NOT NULL
+);
+
+INSERT INTO service (name, description, rate_dollar)
+VALUES ('Audio Rental', 'Audio Rental', 100.00 );
+
+INSERT INTO service (name, description, rate_dollar)
+VALUES ('Audio/Visual Rental', 'Audio/Visual Rental', 150.00 );
+
+INSERT INTO service (name, description, rate_dollar)
+VALUES ('Kitchen use cold/prep kitchen', 'Kitchen use of refrigerator, 3 bowl sink, microwaves', 100.00 );
+
+INSERT INTO service (name, description, rate_dollar)
+VALUES ('Catering/Beverage Closet', 'Includes bar sink, keg holder, ice maker, cabinets and counter - available prior to event', 100.00 );
+
+INSERT INTO service (name, description, rate_dollar)
+VALUES ('Outside Keg Holder', 'Outside Keg Holder', 20.00 );
+
+INSERT INTO service (name, description, rate_dollar)
+VALUES ('Set-up of Tables and Chairs', 'The Broughton Foundation sets up and tears down all tables and chairs ', 150.00 );
