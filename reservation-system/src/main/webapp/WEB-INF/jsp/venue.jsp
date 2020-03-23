@@ -12,6 +12,16 @@
 
 <p class="subtitle">Select a venue</p>
 
+<main id="main-content">
+
+<c:forEach var="rate" items="${rates}">
+
+${rate.name}
+
+</c:forEach>
+
+</main>
+
 </div>
 
 	<%-- import the footer --%>

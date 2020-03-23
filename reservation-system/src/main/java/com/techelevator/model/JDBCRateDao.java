@@ -43,7 +43,7 @@ public class JDBCRateDao implements RateDao{
 	private Rate mapRowToRate(SqlRowSet row) {
 		Rate rate = new Rate();
 		rate.setRateId(row.getLong("rate_id"));
-		rate.setVenueId(row.getInt("venue_id"));
+		rate.setVenueId(row.getLong("venue_id"));
 		rate.setName(row.getString("name"));
 		rate.setDescription(row.getString("description"));
 		rate.setRateDollar(row.getBigDecimal("rate_dollar"));

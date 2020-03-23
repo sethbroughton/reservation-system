@@ -41,7 +41,7 @@ public class SiteController {
 	@RequestMapping(path = "/venueDetail", method = RequestMethod.GET)
 	public String showVenueDetail(@RequestParam Long id, ModelMap modelHolder) {
 
-		List<Rate> allRates = rateDao.listAllRates(id);
+		List<Rate> allRates = rateDao.listAllRates();
 		modelHolder.put("rates", allRates);
 
 		return "venue";

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public class Rate {
 	
 	private Long rateId;
-	private int venueId;
+	private Long venueId;
 	private String name;
 	private String description;
 	private BigDecimal rateDollar;
@@ -79,10 +79,10 @@ public class Rate {
 	public void setHoliday(boolean holiday) {
 		this.holiday = holiday;
 	}
-	public int getVenueId() {
+	public Long getVenueId() {
 		return venueId;
 	}
-	public void setVenueId(int venueId) {
+	public void setVenueId(Long venueId) {
 		this.venueId = venueId;
 	}
 
