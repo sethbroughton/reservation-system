@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface RateDao {
 	
-	public List<Rate> listAllRates(Long id);
+	public List<Rate> listAllRates();
 	
 	public Rate getRateById();
 	

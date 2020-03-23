@@ -13,8 +13,6 @@ public class Rate {
 	private boolean cleaningFee;
 	private String startingMonth;
 	private String endingMonth;
-	private LocalDateTime startingHour;
-	private LocalDateTime endingHour;
 	private boolean weekend;
 	private boolean weekday;
 	private boolean holiday;
@@ -62,18 +60,7 @@ public class Rate {
 	public void setEndingMonth(String endingMonth) {
 		this.endingMonth = endingMonth;
 	}
-	public LocalDateTime getStartingHour() {
-		return startingHour;
-	}
-	public void setStartingHour(LocalDateTime startingHour) {
-		this.startingHour = startingHour;
-	}
-	public LocalDateTime getEndingHour() {
-		return endingHour;
-	}
-	public void setEndingHour(LocalDateTime endingHour) {
-		this.endingHour = endingHour;
-	}
+
 	public boolean isWeekend() {
 		return weekend;
 	}

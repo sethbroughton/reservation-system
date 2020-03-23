@@ -12,10 +12,7 @@
 
 <p class="subtitle">Select a venue</p>
 
-
 </div>
-
-
 
 	<%-- import the footer --%>
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

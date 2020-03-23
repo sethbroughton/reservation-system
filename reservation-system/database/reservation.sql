@@ -54,36 +54,34 @@ CREATE TABLE rate
         includes_cleaning_fee boolean NOT NULL,
         starting_month VARCHAR(256) NOT NULL,
         ending_month VARCHAR(256) NOT NULL,
-        starting_hour TIME NOT NULL,
-        ending_hour TIME NOT NULL,
         weekend boolean NOT NULL,
         weekday boolean NOT NULL,
         holiday boolean NOT NULL
 );
 
-INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
-VALUES ('Weekeday',1,'Monday-Friday before 4:30', 350.00, false, 'January', 'December', '00:00:00', '16:30:00', false, true, false);
+INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, weekend, weekday, holiday)
+VALUES ('Weekday',1,'Monday-Friday before 4:30', 350.00, false, 'January', 'December', false, true, false);
 
-INSERT INTO rate (name, venue_id,description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
-VALUES ('Weekday-Evening',1,'Monday-Friday after 4:30', 500.00, false, 'January', 'December', '16:30:00', '24:00:00', false, true, false); 
+INSERT INTO rate (name, venue_id,description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, weekend, weekday, holiday)
+VALUES ('Weekday-Evening',1,'Monday-Friday after 4:30', 500.00, false, 'January', 'December', false, true, false); 
 
-INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
-VALUES ('Saturday',1,'Saturday Only', 900.00, false, 'January', 'December', '00:00:00', '24:00:00', true, false, false);
+INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, weekend, weekday, holiday)
+VALUES ('Saturday',1,'Saturday Only', 900.00, false, 'January', 'December', true, false, false);
 
-INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
-VALUES ('Sunday - All Day',1,'Sunday Only', 500.00, false, 'January', 'December', '00:00:00', '24:00:00', true, false, false);
+INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, weekend, weekday, holiday)
+VALUES ('Sunday - All Day',1,'Sunday Only', 500.00, false, 'January', 'December', true, false, false);
 
-INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
-VALUES ('Sunday - Evening',1,'Sunday 12pm to 6pm', 500.00, false, 'January','December', '12:00:00', '18:00:00', true, false, false);
+INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, weekend, weekday, holiday)
+VALUES ('Sunday - Evening',1,'Sunday 12pm to 6pm', 500.00, false, 'January','December', true, false, false);
 
-INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
-VALUES ('Weekend - In Season',1,'Friday 5pm to Sunday 10am', 0, true, 'April','October', '00:00:00', '24:00:00', true, false, false);
+INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, weekend, weekday, holiday)
+VALUES ('Weekend - In Season',1,'Friday 5pm to Sunday 10am', 0, true, 'April','October', true, false, false);
 
-INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
-VALUES ('Weekend - Off Season',1,'Friday 5pm to Sunday 10am', 0, true, 'November','March', '00:00:00', '24:00:00', true, false, false);
+INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, weekend, weekday, holiday)
+VALUES ('Weekend - Off Season',1,'Friday 5pm to Sunday 10am', 0, true, 'November','March', true, false, false);
 
-INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, starting_hour, ending_hour, weekend, weekday, holiday)
-VALUES ('Special Holiday',1, 'Holiday Rate', 0.00, true, 'January','December', '00:00:00', '24:00:00', false, false, true);
+INSERT INTO rate (name, venue_id, description, rate_dollar, includes_cleaning_fee, starting_month, ending_month, weekend, weekday, holiday)
+VALUES ('Special Holiday',1, 'Holiday Rate', 0.00, true, 'January','December', false, false, true);
 
 
 DROP TABLE IF EXISTS service;
