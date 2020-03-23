@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.techelevator.model.Rate;
+import com.techelevator.model.RateDao;
 import com.techelevator.model.Venue;
 import com.techelevator.model.VenueDao;
 
@@ -21,6 +23,8 @@ public class SiteController {
 
 	@Autowired
 	private VenueDao venueDao;
+	private RateDao rateDao;
+	
 
 	@RequestMapping(path = "/home", method = RequestMethod.GET)
 	public String displayHomePage(ModelMap modelHolder) {
@@ -36,10 +40,13 @@ public class SiteController {
 
 	@RequestMapping(path = "/venueDetail", method = RequestMethod.GET)
 	public String showVenueDetail(@RequestParam Long id, ModelMap modelHolder) {
-		Venue venue = venueDao.getVenueById(id);
-		modelHolder.put("venue", venue);
+
+		List<Rate> allRates = rateDao.listAllRates(id);
+		modelHolder.put("rates", allRates);
 
 		return "venue";
+		
+		
 	}
 	
 	
