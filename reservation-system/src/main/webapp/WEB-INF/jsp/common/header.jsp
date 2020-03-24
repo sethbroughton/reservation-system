@@ -31,7 +31,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://bulma.io">
-      <c:url var="tpUrl" value="/img/toilet_paper.jpg"/>
+      <c:url var="tpUrl" value="/img/logo.png"/>
       <img src="${tpUrl }">
     </a>
 

@@ -10,15 +10,30 @@
 
 <h1 class="title">Venue Reservation System</h1>
 
-<p class="subtitle">Select a venue</p>
+<p class="subtitle">Select Rate</p>
 
 <main id="main-content">
+<form method="POST">
+<div class="field has-addons">
 
-<c:forEach var="rate" items="${rates}">
+  <div class="control is-expanded">
+    <div class="select is-fullwidth">
 
-${rate.name}
+      <select name="rate">
+      <c:forEach var="rate" items="${rates }">
+        <option rate="${rate.name}">${rate.name}</option>
+        </c:forEach>
+      </select>
+    </div>
+  </div>
+  <div class="control">
+    <button type="submit" class="button is-primary">Choose</button>
+  </div>
+  
+</div>
+ </form>
 
-</c:forEach>
+
 
 </main>
 

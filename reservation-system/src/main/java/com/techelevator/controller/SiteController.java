@@ -2,6 +2,8 @@ package com.techelevator.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,8 +25,11 @@ public class SiteController {
 
 	@Autowired
 	private VenueDao venueDao;
+	
+	@Autowired
 	private RateDao rateDao;
 	
+	public static final String APPLICATION_KEY = "reservation";
 
 	@RequestMapping(path = "/home", method = RequestMethod.GET)
 	public String displayHomePage(ModelMap modelHolder) {
@@ -39,6 +44,19 @@ public class SiteController {
 	}
 
 	@RequestMapping(path = "/venueDetail", method = RequestMethod.GET)
+	public String showVenueDetail(@RequestParam Long id, 
+			ModelMap modelHolder, 
+			HttpSession session) {
+
+		List<Rate> allRates = rateDao.listAllRates();
+		modelHolder.put("rates", allRates);
+		
+		return "venue";
+		
+	}
+	
+	
+	@RequestMapping(path = "/venueDetail", method = RequestMethod.POST)
 	public String showVenueDetail(@RequestParam Long id, ModelMap modelHolder) {
 
 		List<Rate> allRates = rateDao.listAllRates();
@@ -46,9 +64,7 @@ public class SiteController {
 
 		return "venue";
 		
-		
 	}
-	
 	
 
 }
