@@ -48,7 +48,6 @@
 				<c:forEach var="rate" items="${rates }">
 					<tr>
 						<td><strong>${rate.name }</strong></td>
-
 						<td>${rate.description }</td>
 						<td><fmt:formatNumber value="${rate.rateDollar }"
 								type="currency" /></td>
@@ -60,7 +59,6 @@
 								<td>No</td>
 							</c:otherwise>
 						</c:choose>
-
 					</tr>
 				</c:forEach>
 			</tbody>

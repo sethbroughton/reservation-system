@@ -79,25 +79,26 @@ CREATE TABLE service
         service_id SERIAL NOT NULL, 
         name VARCHAR(256) NOT NULL,
         description VARCHAR(256) NOT NULL, 
-        rate_dollar money NOT NULL
+        rate_dollar Integer NOT NULL
 );
 
 INSERT INTO service (name, description, rate_dollar)
-VALUES ('Audio Rental', 'Audio Rental', 100.00 );
+VALUES ('Audio Rental', 'Audio Rental', 100 );
 
 INSERT INTO service (name, description, rate_dollar)
-VALUES ('Audio/Visual Rental', 'Audio/Visual Rental', 150.00 );
+VALUES ('Audio/Visual Rental', 'Audio/Visual Rental', 150 );
 
 INSERT INTO service (name, description, rate_dollar)
-VALUES ('Kitchen use cold/prep kitchen', 'Kitchen use of refrigerator, 3 bowl sink, microwaves', 100.00 );
+VALUES ('Kitchen use cold/prep kitchen', 'Kitchen use of refrigerator, 3 bowl sink, microwaves', 100 );
 
 INSERT INTO service (name, description, rate_dollar)
-VALUES ('Catering/Beverage Closet', 'Includes bar sink, keg holder, ice maker, cabinets and counter - available prior to event', 100.00 );
+VALUES ('Catering/Beverage Closet', 'Includes bar sink, keg holder, ice maker, cabinets and counter - available prior to event', 100 );
 
 INSERT INTO service (name, description, rate_dollar)
-VALUES ('Outside Keg Holder', 'Outside Keg Holder', 20.00 );
+VALUES ('Outside Keg Holder', 'Outside Keg Holder', 20 );
 
 INSERT INTO service (name, description, rate_dollar)
-VALUES ('Set-up of Tables and Chairs', 'The Broughton Foundation sets up and tears down all tables and chairs ', 150.00 );
+VALUES ('Set-up of Tables and Chairs', 'The Broughton Foundation sets up and tears down all tables and chairs ', 150 );
 
         SELECT * FROM rate;
+        SELECT * from service;

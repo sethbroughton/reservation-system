@@ -30,7 +30,7 @@
 	<%-- Setup our nav bar using fancy bulma styles --%>
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
+    <a class="navbar-item" href="home">
       <c:url var="tpUrl" value="/img/logo.png"/>
       <img src="${tpUrl }">
     </a>
@@ -44,7 +44,7 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
+      <a class="navbar-item" href="home">
         Home
       </a>
 
