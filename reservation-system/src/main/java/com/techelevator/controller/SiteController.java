@@ -55,7 +55,6 @@ public class SiteController {
 		
 	}
 	
-	
 	@RequestMapping(path = "/venueDetail", method = RequestMethod.POST)
 	public String showVenueDetail(@RequestParam Long id, ModelMap modelHolder) {
 

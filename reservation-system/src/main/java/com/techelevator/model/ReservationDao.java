@@ -10,4 +10,5 @@ public interface ReservationDao {
 	public List<Reservation> listAllReservations();
 
 	public Reservation getReservationById(Long reservationId);
+	
 }

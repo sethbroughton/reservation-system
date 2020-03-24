@@ -10,8 +10,7 @@ public class Reservation {
     private Long rate_id;
     private LocalDateTime dateStart;
     private LocalDateTime dateEnd;
-    private LocalDateTime startingHour;
-    private LocalDateTime endingHour;
+
     private boolean weekend;
     private boolean weekday;
     private boolean holiday;
@@ -52,18 +51,7 @@ public class Reservation {
 	public void setDateEnd(LocalDateTime dateEnd) {
 		this.dateEnd = dateEnd;
 	}
-	public LocalDateTime getStartingHour() {
-		return startingHour;
-	}
-	public void setStartingHour(LocalDateTime startingHour) {
-		this.startingHour = startingHour;
-	}
-	public LocalDateTime getEndingHour() {
-		return endingHour;
-	}
-	public void setEndingHour(LocalDateTime endingHour) {
-		this.endingHour = endingHour;
-	}
+
 	public boolean isWeekend() {
 		return weekend;
 	}
