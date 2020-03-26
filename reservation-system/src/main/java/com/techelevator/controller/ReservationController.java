@@ -25,7 +25,7 @@ import com.techelevator.model.VenueDao;
  */
 
 @Controller
-public class SiteController {
+public class ReservationController {
 
 	@Autowired
 	private VenueDao venueDao;
@@ -77,25 +77,54 @@ public class SiteController {
 		if(reservation == null) {
 			return "redirect:/home";
 		}
-		
 
-		return "redirect:/services";
+		return "redirect:/reservation";
 		
 	}
 	
-	@RequestMapping(path="services", method = RequestMethod.GET)
-	public String showServicesDetail(ModelMap modelHolder) {
+	@RequestMapping(path="reservation", method = RequestMethod.GET)
+	public String showReservationInput(HttpSession session) {
 		
-		List<Service> allServices = serviceDao.listAllServices();
-		modelHolder.put("services", allServices);
-		
-		return "services";
+		if(session.getAttribute("reservation") == null) {
+			return "redirect:/home";
+		}
+		else {
+			return "reservation";
+		}
 	}
 	
-//	@RequestMapping(path="service", method = RequestMethod.POST)
-//	public String handleServiceSelection(HttpSession session) {
-//		
-//		
-//	}
+	@RequestMapping(path="reservation", method = RequestMethod.POST)
+	public String handleReservationInput(
+			@RequestParam String name,
+			HttpSession session) {
+		
+		Reservation reservation = (Reservation) session.getAttribute("reservation");
+		
+		if(reservation == null) {
+			return "redirect:/home";
+		}
+		
+		reservation.setName(name);
+		session.setAttribute("reservation", reservation);
+		
+		return "redirect:/summary";
+
+	}
+	
+	
+	
+	
+	@RequestMapping(path="summary", method = RequestMethod.GET)
+	public String showSummaryPage(HttpSession session) {
+		
+		if(session.getAttribute("reservation") == null) {
+			return "redirect:/home";
+		}
+		else {
+			return "summary";
+		}
+	}
+	
+	
 
 }

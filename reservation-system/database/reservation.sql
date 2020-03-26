@@ -4,16 +4,33 @@ CREATE TABLE reservation
 (
         reservation_id SERIAL NOT NULL,
         venue_id INTEGER NOT NULL,
-        name VARCHAR(256) NOT NULL,
+        client_id INTEGER NOT NULL,
         rate_id INTEGER NOT NULL,
         date_start DATE NOT NULL,
-        date_end DATE NOT NULL, 
-        weekend boolean NOT NULL,
-        weekday boolean NOT NULL,
-        holiday boolean NOT NULL
+        date_end DATE NOT NULL
+     --   weekend boolean NOT NULL,
+      --  weekday boolean NOT NULL,
+       -- holiday boolean NOT NULL,
   
 );
 
+DROP TABLE IF EXISTS reservation_service;
+
+CREATE TABLE client
+(
+        client_id SERIAL NOT NULL,
+        phone_number VARCHAR(64) not null,
+        email_address VARCHAR(64) not null
+        
+
+)
+
+CREATE TABLE reservation_service
+(
+        reservation_id INTEGER NOT NULL,
+        service_id INTEGER NOT NULL
+
+);
 
 DROP TABLE IF EXISTS venue;
 
