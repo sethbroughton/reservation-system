@@ -48,8 +48,8 @@
         Home
       </a>
 
-      <a class="navbar-item">
-        Documentation
+      <a class="navbar-item" href="reservation">
+        Check Availability
       </a>
 
       <div class="navbar-item has-dropdown is-hoverable">
@@ -78,9 +78,6 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
           <a class="button is-light">
             Log in
           </a>

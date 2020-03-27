@@ -23,9 +23,17 @@ public class JDBCReservationDao implements ReservationDao {
 	}
 	
 	@Override
-	public void saveReservation(Reservation reservation) {
-		// TODO Auto-generated method stub
-		
+	public Long saveReservation(Reservation reservation) {
+		Long reservationId = null;
+		String sqlInsertNewReservation = "INSERT INTO reservation (venue_id, client_id, rate_id, date_start, date_end, date_created) "
+				+ "VALUES (?, ?, ?, ?, ?, CURRENT_DATE) RETURNING reservation_id ";
+
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlInsertNewReservation, reservation.getVenueId(), reservation.getClientId(),
+				reservation.getRateId(), reservation.getDateStart(), reservation.getDateEnd());
+		if (results.next()) {
+			reservationId = results.getLong("reservation_id");
+		}
+	return reservationId;
 	}
 
 	@Override
@@ -50,7 +58,7 @@ public class JDBCReservationDao implements ReservationDao {
 		reservation.setReservationId(row.getLong("reservation_id"));
 		reservation.setVenueId(row.getLong("venue_id"));
 		reservation.setName(row.getString("name"));
-		reservation.setRate_id(row.getLong("rate_id"));
+		reservation.setRateId(row.getLong("rate_id"));
 		reservation.setDateStart(LocalDateTime.parse(row.getString("date_start")));
 		reservation.setDateEnd(LocalDateTime.parse(row.getString("date_end")));
 		reservation.setWeekend(row.getBoolean("weekend"));

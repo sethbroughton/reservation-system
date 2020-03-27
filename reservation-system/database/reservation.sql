@@ -7,14 +7,15 @@ CREATE TABLE reservation
         client_id INTEGER NOT NULL,
         rate_id INTEGER NOT NULL,
         date_start DATE NOT NULL,
-        date_end DATE NOT NULL
+        date_end DATE NOT NULL,
+        date_created DATE NOT NULL
      --   weekend boolean NOT NULL,
       --  weekday boolean NOT NULL,
        -- holiday boolean NOT NULL,
   
 );
 
-DROP TABLE IF EXISTS reservation_service;
+DROP TABLE IF EXISTS client;
 
 CREATE TABLE client
 (
@@ -22,8 +23,9 @@ CREATE TABLE client
         phone_number VARCHAR(64) not null,
         email_address VARCHAR(64) not null
         
+);
 
-)
+DROP TABLE IF EXISTS reservation_service;
 
 CREATE TABLE reservation_service
 (
@@ -119,3 +121,4 @@ VALUES ('Set-up of Tables and Chairs', 'The Broughton Foundation sets up and tea
 
         SELECT * FROM rate;
         SELECT * from service;
+        SELECT * FROM reservation;

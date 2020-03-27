@@ -2,13 +2,19 @@ package com.techelevator.model;
 
 import java.time.LocalDateTime;
 
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Reservation {
 	
     private Long reservationId;
     private Long venueId;
     private String name;
-    private Long rate_id;
+    private Long rateId;
+    private Long clientId;
+
     private LocalDateTime dateStart;
+
     private LocalDateTime dateEnd;
 
     private boolean weekend;
@@ -33,12 +39,14 @@ public class Reservation {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Long getRate_id() {
-		return rate_id;
+	public Long getRateId() {
+		return rateId;
 	}
-	public void setRate_id(Long rate_id) {
-		this.rate_id = rate_id;
+	public void setRateId(Long rateId) {
+		this.rateId = rateId;
 	}
+	
+	
 	public LocalDateTime getDateStart() {
 		return dateStart;
 	}
@@ -69,5 +77,11 @@ public class Reservation {
 	}
 	public void setHoliday(boolean holiday) {
 		this.holiday = holiday;
+	}
+	public Long getClientId() {
+		return clientId;
+	}
+	public void setClient_id(Long client_id) {
+		this.clientId = clientId;
 	}
 }

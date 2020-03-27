@@ -18,7 +18,7 @@
 			<div class="field has-addons">
 
 				<div class="field" >
-				<label class="label" for="arrival">Arrival</label>
+				<label class="label" for="arrival">Start Date</label>
 				<div class="control">
 				<div class="select">
 					<select name="arrivalMonth">
@@ -84,9 +84,9 @@
 					</div>
 				</div>
 				
-			</div>
 			
 			
+			<%--
 				<div class="field" >
 				<label class="label" for="departure">Departure</label>
 				<div class="control">
@@ -155,11 +155,12 @@
 				</div>
 				
 			</div>
-			
+			 --%>
 			
 				<div class="control">
-					<button type="submit" class="button is-primary">Choose</button>
+					<button type="submit" class="button is-primary">Submit</button>
 				</div>
+			</div>
 			</div>
 		</form>
 

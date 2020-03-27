@@ -22,7 +22,8 @@
 
 						<select name="rate">
 							<c:forEach var="rate" items="${rates }">
-								<option rate="${rate.name}">${rate.name}</option>
+								<option rate="${rate.name}">${rate.name} (<fmt:formatNumber value="${rate.rateDollar }"
+								type="currency" />)</option>
 							</c:forEach>
 						</select>
 					</div>

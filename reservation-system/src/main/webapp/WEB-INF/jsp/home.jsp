@@ -8,28 +8,26 @@
 
 <div class="container">
 
-<h1 class="title">Venue Reservation System</h1>
+	<h1 class="title">Venue Reservation System</h1>
 
-<p class="subtitle">Select a venue</p>
+	<p class="subtitle">Select a venue</p>
 
-<main id="main-content">
+	<main id="main-content">
 
-<c:forEach var="venue" items="${venues}">
- <div id="venue-detail">  
- <a class="venue-image" href="venueDetail?id=${venue.id }">
-<c:url var="imgVenue" value="/img/${venue.imageName }"/>
-<img src="${imgVenue}"/>
-</a>
+		<c:forEach var="venue" items="${venues}">
+			<div id="venue-detail">
+				<a class="venue-image" href="venueDetail?id=${venue.id }"> <c:url
+						var="imgVenue" value="/img/${venue.imageName }" /> <img
+					src="${imgVenue}" />
+				</a> <a href="venueDetail?id=${venue.id }">${venue.name}</a>
+			</div>
 
-<a href="venueDetail?id=${venue.id }">${venue.name}</a>
-</div> 
+		</c:forEach>
 
-</c:forEach>
-
-</main>
+	</main>
 </div>
 
 
 
-	<%-- import the footer --%>
+<%-- import the footer --%>
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

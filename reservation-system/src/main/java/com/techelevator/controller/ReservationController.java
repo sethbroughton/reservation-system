@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -36,9 +37,12 @@ public class ReservationController {
 	@Autowired
 	private ServiceDao serviceDao;
 	
+	@Autowired
+	private ReservationDao reservationDao;
+	
 	public static final String APPLICATION_KEY = "reservation";
 
-	@RequestMapping(path = "/home", method = RequestMethod.GET)
+	@RequestMapping(path = {"/","home"}, method = RequestMethod.GET)
 	public String displayHomePage(ModelMap modelHolder) {
 
 		// List all current reservations
@@ -79,7 +83,6 @@ public class ReservationController {
 		}
 
 		return "redirect:/reservation";
-		
 	}
 	
 	@RequestMapping(path="reservation", method = RequestMethod.GET)
@@ -95,7 +98,7 @@ public class ReservationController {
 	
 	@RequestMapping(path="reservation", method = RequestMethod.POST)
 	public String handleReservationInput(
-			@RequestParam String name,
+			@RequestParam LocalDateTime startDate, LocalDateTime endDate, 
 			HttpSession session) {
 		
 		Reservation reservation = (Reservation) session.getAttribute("reservation");
@@ -104,14 +107,14 @@ public class ReservationController {
 			return "redirect:/home";
 		}
 		
-		reservation.setName(name);
+		reservation.setClient_id(1L);
+		reservation.setDateStart(startDate);
+		reservation.setDateEnd(endDate);
+		reservationDao.saveReservation(reservation);
 		session.setAttribute("reservation", reservation);
 		
 		return "redirect:/summary";
-
 	}
-	
-	
 	
 	
 	@RequestMapping(path="summary", method = RequestMethod.GET)
